@@ -1,9 +1,6 @@
-import Badge from "@mui/material/Badge";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import Link from "@mui/material/Link";
-import Deposits from "../components/Deposits";
 import Orders from "../components/Orders";
 import AddToDolist from "../components/AddToDoList";
 import ToDoList from "../components/ToDoList";
@@ -23,7 +20,6 @@ export const Home = () => {
               }}
             >
               <AddToDolist />
-              {/* <Deposits /> */}
             </Paper>
           </Grid>
           <Grid item xs={12} md={12} lg={12}>
