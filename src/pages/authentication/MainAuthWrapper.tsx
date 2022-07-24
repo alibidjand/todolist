@@ -20,7 +20,7 @@ export default function MainAuthenticationWrapper() {
           md={6}
           sx={{
             backgroundImage: `url(${toAbsoluteUrl(
-              "/assets/images/school.jpg"
+              "/assets/images/artificial.jpg"
             )})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",

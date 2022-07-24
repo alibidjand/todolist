@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLocalStorage } from "./useLocalStorage";
+import { useAppDispatch, useAppSelector } from "../state/redux/hooks/hooks";
+import { clearUser, getUser, setUser } from "../state/redux/slice/authSlice";
+// import { useLocalStorage } from "./useLocalStorage";
 
 const AuthContext = createContext<{
   user: any;
@@ -13,16 +15,18 @@ const AuthContext = createContext<{
 });
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useLocalStorage("user", null);
+  const dispatch = useAppDispatch();
+  const user = useAppSelector(getUser);
+  // const [user, setUser] = useLocalStorage("user", null);
   const navigate = useNavigate();
 
   const login = async (data: any) => {
-    setUser(data);
-    navigate("/dashboard/profile", { replace: true });
+    dispatch(setUser(data));
+    navigate("/home", { replace: true });
   };
 
   const logout = () => {
-    setUser(null);
+    dispatch(clearUser());
     navigate("/", { replace: true });
   };
 
