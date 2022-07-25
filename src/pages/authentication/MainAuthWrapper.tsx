@@ -2,7 +2,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-// import backImage from "/assets/images/school.jpg";
 import { Outlet } from "react-router-dom";
 import { toAbsoluteUrl } from "../../utils/AssetHelpers";
 
